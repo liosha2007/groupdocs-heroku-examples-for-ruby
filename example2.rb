@@ -12,7 +12,7 @@ def example2()
     files_list = GroupDocs::Storage::Folder.list!('/', {}, { :client_id => settings.client_id, :private_key => settings.private_key})
     filelist = []
     files_list.each { |element| filelist  << element.name }
-  rescue Exception => e
+  rescue StandardError => e
     errmsg = e.message
   end
 

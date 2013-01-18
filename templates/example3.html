@@ -46,9 +46,9 @@
 	            <h2>GroupDocs Ruby SDK Samples for <a href="http://www.heroku.com/" target="_blank">heroku</a> add-on.</h2>
 				<ul class="nav nav-pills nav-stacked">
 		            <li><a href="/">Home Page</a></li>
-		            <li class="active"><a href="/example1">1 - How to login to GroupDocs using the API</a></li>
+		            <li><a href="/example1">1 - How to login to GroupDocs using the API</a></li>
 		            <li><a href="/example2">2 - How to list files within GroupDocs Storage using the Storage API</a></li>
-		            <li><a href="/example3">3 - How to upload a file to GroupDocs using the Storage API</a></li>
+		            <li class="active"><a href="/example3">3 - How to upload a file to GroupDocs using the Storage API</a></li>
 		            <li><a href="/example4">4 - How to download a file from GroupDocs Storage using the Storage API</a></li>
 		            <li><a href="/example5">5 - How to copy / move a file using the GroupDocs Storage API</a></li>
 		            <li><a href="/example6">6 - How to add a Signature to a document in GroupDocs Signature</a></li>
@@ -59,19 +59,31 @@
 				</ul>
                 <p>
 					<p>
-						<div class="alert alert-info">This example will show how to use Signer object to be authorized at GroupDocs and how to get GroupDocs user infromation using Ruby SDK</div>
+						<div class="alert alert-info">This example will show how to use StorageApi to upload test file to GroupDocs account using Ruby SDK</div>
 					</p>
+					<form action="/example3" method="post" enctype="multipart/form-data">
+						<input type="file" name="fileData" />
+						
+						<input type="submit" value="Submit" class="btn" />
+					</form>
 					{% if errmsg %}
-					<p>
-						<span class="label label-important">{{ errmsg }}</span>
-					</p>
-					{% else %}
-					<ul class="nav nav-tabs nav-stacked">
-						<li><a><span class="label">First Name:</span> {{ firstname }}</a></li>
-						<li><a><span class="label">Last Name:</span> {{ lastname }}</a></li>
-						<li><a><span class="label">Nick Name:</span> {{ nickname }}</a></li>
-						<li><a><span class="label">Primary Email:</span> {{ primary_email }}</a></li>
-					</ul>
+						<p>
+							<span class="label label-important">{{ errmsg }}</span>
+						</p>
+					{% elsif guid %}
+						<ul class="nav nav-tabs nav-stacked">
+							<li><a>
+								<span class="label">File Name:</span> {{ filename }}
+							</a></li>
+							<li><a>
+								<span class="label">File Guid:</span> {{ guid }}
+							</a></li>
+						</ul>
+						<div>
+							<iframe src="https://apps.groupdocs.com/document-viewer/embed/{{ guid }}" frameborder="0" width="720" height="600"></iframe>
+							<p>File was uploaded to GroupDocs. Here you can see your <strong>{{ filename }}</strong> file in the GroupDocs Embedded Viewer.</p>
+	
+						</div>
 					{% endif %}
                 </p>
             </div>

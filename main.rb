@@ -5,6 +5,7 @@ require('groupdocs')
 
 require('./example1.rb')
 require('./example2.rb')
+require('./example3.rb')
 
 use Rack::Static, :urls => ["/static"]
 
@@ -22,4 +23,14 @@ end
 # Example 2
 get '/example2' do
   example2()
+end
+
+# Example 3 GET
+get '/example3' do
+  example3(true)
+end
+
+# Example 3 POST
+post '/example3' do
+  example3(false)
 end
