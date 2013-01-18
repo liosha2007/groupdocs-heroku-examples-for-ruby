@@ -16,8 +16,7 @@ def example4(is_get)
       raise "Please enter all required parameters"
     end
     set :file_id, params[:fileId]
-    
-    
+
     files_list = GroupDocs::Storage::Folder.list!('/', {}, { :client_id => settings.client_id, :private_key => settings.private_key})
     dowload_file = ''
 
@@ -28,19 +27,12 @@ def example4(is_get)
         dowload_file = element
       end
     end
-    
-    puts '------------------'
-    puts dowload_file
-    puts '------------------'
 
     dowloaded_file = dowload_file.download!(File.dirname(__FILE__), { :client_id => settings.client_id, :private_key => settings.private_key})
     unless dowloaded_file.empty?
       massage = "<font color='green'>File was downloaded to the <font color='blue'>#{dowloaded_file}</font> folder</font> <br />"
     end
-    
-    
-    
-  
+
   rescue StandardError => e
     errmsg = e.message
   end
