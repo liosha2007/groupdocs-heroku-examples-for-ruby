@@ -50,45 +50,30 @@
 		            <li><a href="/example2">2 - How to list files within GroupDocs Storage using the Storage API</a></li>
 		            <li><a href="/example3">3 - How to upload a file to GroupDocs using the Storage API</a></li>
 		            <li><a href="/example4">4 - How to download a file from GroupDocs Storage using the Storage API</a></li>
-		            <li class="active"><a href="/example5">5 - How to copy / move a file using the GroupDocs Storage API</a></li>
+		            <li><a href="/example5">5 - How to copy / move a file using the GroupDocs Storage API</a></li>
 		            <li><a href="/example6">6 - How to add a Signature to a document in GroupDocs Signature</a></li>
-		            <li><a href="/example7">7 - How to create a list of thumbnails for a document</a></li>
+		            <li class="active"><a href="/example7">7 - How to create a list of thumbnails for a document</a></li>
 		            <li><a href="/example8">8 - How to return a URL representing a single page of a Document</a></li>
 		            <li><a href="/example9">9 - How to generate an embedded Viewer URL for a Document</a></li>
 		            <li><a href="/example10">10 - How to share a document to other users</a></li>
 				</ul>
                 <p>
 					<p>
-						<div class="alert alert-info">This example will show how to Copy/Move particular file in your GroupDocs account using Ruby SDK</div>
+						<div class="alert alert-info">This example will show how to list thumbnails for documents in the GroupDocs account using Ruby SDK</div>
 					</p>
 					{% if errmsg %}
 						<p>
 							<span class="label label-important">{{ errmsg }}</span>
 						</p>
-					{% elsif massage %}
-						<div class="alert alert-success">
-							{{ massage }}
-						</div>
+					{% elsif thumbnails %}
+						<ul class="nav nav-tabs nav-stacked">
+							{% for thumbnail in thumbnails %}
+								<li><a>
+									{{ thumbnail }}
+								</a></li>
+							{% endfor %}
+						</ul>
 					{% endif %}
-					<form action="/example5" method="post" enctype="multipart/form-data">
-						<div class="input-append">
-							<label for="srcPathId">Source Path </label>
-							<input type="text" name="srcPath" id="srcPathId" placeholder="/myDoc.doc" /><br />
-
-							<label for="dstPathId">Destination Path </label>
-							<input type="text" name="dstPath" id="dstPathId" placeholder="/test/newDoc.doc" /><br /><br />
-
-							<label for="copyId">
-								<input type="radio" name="action" value="copy" id="copyId" checked /> Copy
-							</label>
-
-							<label for="moveId">
-								<input type="radio" name="action" value="move" id="moveId" /> Move
-							</label>
-							
-							<input type="submit" value="Submit" class="btn" />
-						</div>
-					</form>
                 </p>
             </div>
 
