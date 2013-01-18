@@ -8,7 +8,7 @@ def example3(is_get)
   # Load template
   template = File.open('templates/example3.html', 'r'){ |file| file.read  }
   if is_get 
-    return Liquid::Template.parse(template).render('is_get' => is_get)
+    return Liquid::Template.parse(template).render()
   end
 
   begin
