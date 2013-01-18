@@ -27,7 +27,6 @@
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-
 		<div class="navbar navbar-inverse navbar-fixed-top">
 		    <div class="navbar-inner">
 		        <div class="container">
@@ -46,8 +45,8 @@
             <div class="hero-unit">
 	            <h2>GroupDocs Ruby SDK Samples for <a href="http://www.heroku.com/" target="_blank">heroku</a> add-on.</h2>
 				<ul class="nav nav-pills nav-stacked">
-		            <li class="active"><a href="/">Home Page</a></li>
-		            <li><a href="/example1">1 - How to login to GroupDocs using the API</a></li>
+		            <li><a href="/">Home Page</a></li>
+		            <li class="active"><a href="/example1">1 - How to login to GroupDocs using the API</a></li>
 		            <li><a href="/example2">2 - How to list files within GroupDocs Storage using the Storage API</a></li>
 		            <li><a href="/example3">3 - How to upload a file to GroupDocs using the Storage API</a></li>
 		            <li><a href="/example4">4 - How to upload a file to GroupDocs using the Storage API</a></li>
@@ -58,6 +57,23 @@
 		            <li><a href="/example9">9 - How to generate an embedded Viewer URL for a Document</a></li>
 		            <li><a href="/example10">10 - How to share a document to other users</a></li>
 				</ul>
+                <p>
+					<p>
+						<div class="alert alert-info">This example will show how to use Signer object to be authorized at GroupDocs and how to get GroupDocs user infromation using Ruby SDK</div>
+					</p>
+					{% if errmsg %}
+					<p>
+						<span class="label label-important">{{ errmsg }}</span>
+					</p>
+					{% else %}
+					<ul class="nav nav-tabs nav-stacked">
+						<li><a><span class="label">First Name:</span> {{ firstname }}</a></li>
+						<li><a><span class="label">Last Name:</span> {{ lastname }}</a></li>
+						<li><a><span class="label">Nick Name:</span> {{ nickname }}</a></li>
+						<li><a><span class="label">Primary Email:</span> {{ primary_email }}</a></li>
+					</ul>
+					{% endif %}
+                </p>
             </div>
 
             <hr />
@@ -66,8 +82,6 @@
                 <p>&copy; GroupDocs 2012</p>
             </footer>
         </div> <!-- /container -->
-
-
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
@@ -79,5 +93,7 @@
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+		<tal:block metal:define-slot="afterScript">
+		</tal:block>
     </body>
 </html>

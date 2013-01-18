@@ -46,7 +46,9 @@ This sample app is also running live on Heroku. To view and try, please open [ht
 
 * Download and install Ruby.
 * Open console and run: `git clone https://github.com/liosha2007/groupdocs-heroku-examples-for-ruby`
-* Install sinatra `gem install sinatra`
+* Install Sinatra `gem install sinatra`
 * Install Liquid `gem install liquid`
+* Install DevKit [https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe](https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe)
+* Install GroupDocs `gem install groupdocs`
 * cd to project directory and run: `ruby main.rb -p 8080`
 * Now open your browser and go to http://localhost:8080/
