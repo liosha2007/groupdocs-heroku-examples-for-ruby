@@ -2,7 +2,9 @@
 require('sinatra')
 require('liquid')
 require('groupdocs')
+
 require('./example1.rb')
+require('./example2.rb')
 
 use Rack::Static, :urls => ["/static"]
 
@@ -15,4 +17,9 @@ end
 # Example 1
 get '/example1' do
   example1()
+end
+
+# Example 2
+get '/example2' do
+  example2()
 end
