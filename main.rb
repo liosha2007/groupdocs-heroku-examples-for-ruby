@@ -8,6 +8,7 @@ require('./example2.rb')
 require('./example3.rb')
 require('./example4.rb')
 require('./example5.rb')
+require('./example6.rb')
 require('./example7.rb')
 require('./example8.rb')
 require('./example9.rb')
@@ -59,6 +60,16 @@ end
 # Example 5 POST
 post '/example5' do
   example5(false)
+end
+# -------------------
+# Example 6 GET
+get '/example6' do
+  example6(true)
+end
+
+# Example 6 POST
+post '/example6' do
+  example6(false)
 end
 # -------------------
 # Example 7 GET
