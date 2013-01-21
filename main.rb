@@ -9,6 +9,7 @@ require('./example3.rb')
 require('./example4.rb')
 require('./example5.rb')
 require('./example7.rb')
+require('./example8.rb')
 
 use Rack::Static, :urls => ["/static"]
 
@@ -63,3 +64,12 @@ get '/example7' do
   example7()
 end
 # -------------------
+# Example 8 GET
+get '/example8' do
+  example8(true)
+end
+
+# Example 8 POST
+post '/example8' do
+  example8(false)
+end
